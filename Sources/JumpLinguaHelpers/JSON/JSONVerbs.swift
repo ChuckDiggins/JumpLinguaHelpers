@@ -16,7 +16,7 @@ public struct JsonVerb: Codable, CustomStringConvertible {
     var spanishPastPart2: String
     var transitivity: VerbTransitivity
     var verbType: String  //"RTA"
-    
+    //added some comments
     
     
     public var description: String {
@@ -46,7 +46,10 @@ public struct JsonVerb: Codable, CustomStringConvertible {
     }
     
     public func getSpanishPastParticiple1()->String{
-        return spanishPastPart1
+        if spanishPastParticiple1.count > 0 {
+            return spanishPastPart1
+        }
+        return ""
     }
 }
 
