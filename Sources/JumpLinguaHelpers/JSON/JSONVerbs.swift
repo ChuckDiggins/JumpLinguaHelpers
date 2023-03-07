@@ -45,6 +45,9 @@ public struct JsonVerb: Codable, CustomStringConvertible {
         self.spanishPastPart2 = spanishPastPart2
     }
     
+    public func getSpanishPastParticiple1()->String{
+        return spanishPastPart1
+    }
 }
 
 /*
@@ -111,7 +114,7 @@ var myMasterVerbList: [JsonVerb] = [
     JsonVerb(spanish: "ablandar", english: "melt",    french: "aboucir"),
     JsonVerb(spanish: "aborrecer", english: "abhor",    french: "détester"),
     JsonVerb(spanish: "abolir", english: "abolish",    french: "abolir"),
-    JsonVerb(spanish: "abrir", english: "open",        french: "ouvrir", spanishPastPart1: "abrierto"),
+    JsonVerb(spanish: "abrir", english: "open",        french: "ouvrir", spanishPastPart1: "abierto"),
     JsonVerb(spanish: "abrazar", english: "hug",    french: "embrasser"),
     JsonVerb(spanish: "absolver", english: "absolve",    french: "absoudre", spanishPastPart1: "absuelto"),
     JsonVerb(spanish: "abstener", english: "abstain",    french: "s'abstenir"),
@@ -862,7 +865,7 @@ var myMasterVerbList: [JsonVerb] = [
     JsonVerb(spanish: "tardar", english: "delay", french: "retarder"),
     JsonVerb(spanish: "teleguiar", english: "teleguide", french: "téléguider"),
     JsonVerb(spanish: "temblar", english: "tremble",    french: "secouer"),
-    JsonVerb(spanish: "temer", english: "fear", french: "avoir peur"),
+    JsonVerb(spanish: "temer", english: "be afraid", french: "avoir peur"),
     JsonVerb(spanish: "tender", english: "tend", french: "tendre"),
     JsonVerb(spanish: "tener", english: "have", french: "avoir"),
     JsonVerb(spanish: "tener que", english: "have to", french: "tenir à ce que"),
