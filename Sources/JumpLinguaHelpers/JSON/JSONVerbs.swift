@@ -14,6 +14,7 @@ public struct JsonVerb: Codable, CustomStringConvertible {
     public var spanish: String
     var spanishPastPart1: String
     var spanishPastPart2: String
+    var spanishGerund: String
     var transitivity: VerbTransitivity
     var verbType: String  //"RTA"
     //added some comments
@@ -31,11 +32,12 @@ public struct JsonVerb: Codable, CustomStringConvertible {
         self.verbType = verbType
         self.spanishPastPart1 = ""
         self.spanishPastPart2 = ""
+        self.spanishGerund = ""
     }
     
     //if intransitive, then no object likes
     
-    public init(spanish: String, english: String, french: String, spanishPastPart1: String = "", spanishPastPart2: String = ""){
+    public init(spanish: String, english: String, french: String, spanishPastPart1: String = "", spanishPastPart2: String = "", spanishGerund: String = ""){
         self.spanish = spanish
         self.english = english
         self.french = french
@@ -43,10 +45,15 @@ public struct JsonVerb: Codable, CustomStringConvertible {
         self.transitivity = .intransitive
         self.spanishPastPart1 = spanishPastPart1
         self.spanishPastPart2 = spanishPastPart2
+        self.spanishGerund = spanishGerund
     }
     
     public func getSpanishPastParticiple1()->String{
         spanishPastPart1
+    }
+    
+    public func getSpanishGerund()->String{
+        spanishGerund
     }
 }
 

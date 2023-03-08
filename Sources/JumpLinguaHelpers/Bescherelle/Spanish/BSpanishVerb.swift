@@ -201,12 +201,22 @@ public class BSpanishVerb : BRomanceVerb {
     }
     
     public override func createDefaultGerund()->String{
-        var vu = VerbUtilities()
-        var tempWord = m_verbStem
+        let vu = VerbUtilities()
+        let tempWord = m_verbStem
         
         switch m_verbEnding {
         case .AR: return tempWord + "ando"
         case .ER, .IR, .accentIR:
+            if tempWord.count > 1 {
+                let lastLetters = tempWord.suffix(2)
+                if lastLetters == "re" {               //handles reír family
+                    return tempWord + "iendo"
+                }
+                if lastLetters == "hu" {               //handles huir family
+                    return tempWord + "yendo"
+                }
+            }
+            
             let lastLetter = tempWord.suffix(1)
             if vu.isVowel(letter: String(lastLetter)) && lastLetter != "u"{
                 return tempWord + "yendo"
