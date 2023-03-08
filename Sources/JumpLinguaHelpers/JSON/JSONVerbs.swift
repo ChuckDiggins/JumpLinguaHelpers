@@ -46,10 +46,7 @@ public struct JsonVerb: Codable, CustomStringConvertible {
     }
     
     public func getSpanishPastParticiple1()->String{
-        if spanishPastParticiple1.count > 0 {
-            return spanishPastPart1
-        }
-        return ""
+        spanishPastPart1
     }
 }
 
