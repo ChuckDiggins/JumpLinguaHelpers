@@ -362,10 +362,10 @@ public class ActiveVerbConjugationSpanish {
         
         if tense.isProgressive() {
             auxiliaryVerb = self.getProgressiveVerb(tense: tense, person: person)
-            participle = verb.m_gerund
+            participle = verb.createGerund()
         } else {
             auxiliaryVerb = self.getPerfectVerb(tense: tense, person: person)
-            participle = verb.m_pastParticiple
+            participle = verb.createPastParticiple()
         }
         
         var pronounString = ""

@@ -785,6 +785,7 @@ var myMasterVerbList: [JsonVerb] = [
     JsonVerb(spanish: "regresar", english: "be back",    french: "être de retour"),
     JsonVerb(spanish: "rehacer", english: "redo", french: "refaire", spanishPastPart1: "rehecho"),
     JsonVerb(spanish: "reír", english: "laugh",    french: "rire", spanishPastPart1: "reído"),
+    JsonVerb(spanish: "releer", english: "reread",    french: "relire", spanishPastPart1: "releído"),
     JsonVerb(spanish: "relampaguear", english: "flash", french: "clignoter"),
     JsonVerb(spanish: "relucir", english: "shine", french: "briller"),
     JsonVerb(spanish: "renegar", english: "renege", french: "renier"),
