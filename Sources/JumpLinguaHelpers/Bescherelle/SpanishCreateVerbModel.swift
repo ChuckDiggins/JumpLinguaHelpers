@@ -249,6 +249,10 @@ public func createSpanishVerbModels()->[RomanceVerbModel]{
     thisVerb.appendSpecialPattern(tense: .future, pattern: .shortInf)
     thisVerb.appendSpecialPattern(tense: .conditional, pattern: .shortInf)
     thisVerb.appendSuffix(suffix: "decir")
+    thisVerb.appendExcludeSuffix(suffix: "maldecir")
+    thisVerb.appendExcludeSuffix(suffix: "bendecir")
+    thisVerb.appendExcludeSuffix(suffix: "contradecir")
+    thisVerb.appendExcludeSuffix(suffix: "predecir")
     verbModels.append(thisVerb)
     
     idNum = 56

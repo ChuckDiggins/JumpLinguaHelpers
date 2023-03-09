@@ -202,25 +202,9 @@ public class ActiveVerbConjugationSpanish {
         
         var workingMorphStruct = verb.getMorphStruct(tense: tense, person: person)
         
-        //        if person == .S1 { verb.dumpMorphStruct(morphStruct: workingMorphStruct, comment: "conjugateThisSimpleIndicativeNew")}
-        //
-        //        if ( person == .S1 && verb.isStemChanging()){
-        //            verb.dumpMorphStruct(morphStruct: workingMorphStruct,
-        //                                 comment: "conjugateThisSimpleIndicativeNew - working struct - person \(person.getMaleString())")
-        //        }
-        
         if tense == Tense.imperative {
             return conjugateImperativeTense(verb: verb, person: person, conjugateEntirePhrase: conjugateEntirePhrase)
         }
-//        else
-//        {
-//            let replaceEndingForm = verb.hasReplaceEndingForm(tense: tense, person: person)
-//            if ( replaceEndingForm.0.count > 0 ){
-//                workingMorphStruct = RegularSpanishVerb().createImperativeS2Form(inputMorphStruct : workingMorphStruct, changeFrom : replaceEndingForm.0, changeTo : replaceEndingForm.1)
-//                workingMorphStruct.isIrreg = true
-//                return workingMorphStruct
-//            }
-//        }
         if ( verb.m_replacementVerbInfinitive.count > 0  && (tense == .future || tense == .conditional )){
             workingMorphStruct = replaceVerbInfinitive(inputMorphStruct : workingMorphStruct, baseInfinitive: verb.m_baseVerbInfinitive,  replacementInfinitive: verb.m_replacementVerbInfinitive)
         }
@@ -228,7 +212,6 @@ public class ActiveVerbConjugationSpanish {
         
         let verbWord = workingMorphStruct.finalVerbForm()
         
-        //var ms = MorphStruct(person: person)
         
         if ( verb.m_specialModel != SpecialSpanishVerbModel.none ){
             workingMorphStruct = IrregularVerbsSpanish().getIrregularFormSpecial(inputMorphStruct : workingMorphStruct, verb : verb, preposition : "",
