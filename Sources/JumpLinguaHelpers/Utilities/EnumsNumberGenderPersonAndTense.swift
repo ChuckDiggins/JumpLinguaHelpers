@@ -509,6 +509,21 @@ public enum  Tense : String, CustomStringConvertible, CaseIterable
     
     public var description:  String {return rawValue}
     
+    public func getSimpleTenseFromCompoundTense()->Tense{
+        switch self {
+        case .presentProgressive: return .present
+        case .imperfectProgressive: return .imperfect
+        case .futureProgressive: return .future
+        case .conditionalProgressive: return .conditional
+        case .presentPerfect: return .present
+        case .pastPerfect: return .imperfect
+        case .preteritePerfect: return .preterite
+        case .futurePerfect: return .future
+        case .conditionalPerfect: return .conditional
+        default: return self
+        }
+    }
+    
     public func isSubjunctive() -> Bool {
         if Tense.subjunctiveAll.contains(self) || Tense.perfectSubjunctiveAll.contains(self) {return true}
         return false
