@@ -524,6 +524,13 @@ public enum  Tense : String, CustomStringConvertible, CaseIterable
         }
     }
     
+    public func isSimpleTense() -> Bool {
+        if Tense.subjunctiveAll.contains(self){ return true }
+        if Tense.indicativeAll.contains(self){ return true }
+        if self == .imperative { return true }
+        return false
+    }
+    
     public func isSubjunctive() -> Bool {
         if Tense.subjunctiveAll.contains(self) || Tense.perfectSubjunctiveAll.contains(self) {return true}
         return false
