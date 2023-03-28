@@ -716,7 +716,7 @@ var myMasterVerbList: [JsonVerb] = [
     JsonVerb(spanish: "pensar", english: "think",  french: "penser"),
     JsonVerb(spanish: "percibir", english: "perceive", french: "percevoir"),
     JsonVerb(spanish: "perder", english: "lose", french: "perdre"),
-    JsonVerb(spanish: "perdonar", english: "pardon", french: "pardonner"),
+    JsonVerb(spanish: "perdonar", english: "pardon", french: "pardonner"), 
     JsonVerb(spanish: "permanecer", english: "stay", french: "rester"),
     JsonVerb(spanish: "permitir", english: "permit",    french: "permettre"),
     JsonVerb(spanish: "perseguir", english: "pursue", french: "poursuivre"),
