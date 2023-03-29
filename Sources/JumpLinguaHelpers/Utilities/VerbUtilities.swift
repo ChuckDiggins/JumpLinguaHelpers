@@ -305,6 +305,34 @@ public struct VerbUtilities {
         return wordList
     }
  
+    public func replaceAccentedCharacter(_ input: Character)->String {
+        if input == "á" { return String("a") }
+        if input == "à" { return String("a") }
+        if input == "ñ" { return String("n") }
+        if input == "ç" { return String("c") }
+        if input == "é" { return String("e") }
+        if input == "è" { return String("e") }
+        if input == "ê" { return String("e") }
+        if input == "í" { return String("i") }
+        if input == "î" { return String("i") }
+        if input == "ó" { return String("o") }
+        if input == "ú" { return String("u") }
+        if input == "ü" { return String("u") }
+        return String(input)
+    }
+    
+    //This allows getListOfWordsIncludingPunctuation to see punctuation as words
+    public func removeAccentedLetters(_ characterArray: String)->String
+    {
+        var ss = ""
+        for c in characterArray
+        {
+            ss += replaceAccentedCharacter(c).lowercased()  //ss.append(c)
+        }
+        
+        return ss
+    }//func removeAccentedLetters
+    
     //This allows getListOfWordsIncludingPunctuation to see punctuation as words
     public func removeLeadingOrFollowingBlanks(characterArray: String)->String
     {
@@ -396,6 +424,8 @@ public struct VerbUtilities {
         { return true }
      return false
     }
+    
+   
     
     public func isPunctuation(input: Character)->Bool {
         if input == "." || input == "," || input == "?" || input == "¿" || input == "'"
