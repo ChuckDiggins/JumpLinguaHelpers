@@ -52,8 +52,8 @@ public struct VerbModelManager{
     
     public mutating func createFrenchBVerb(verbPhrase: String) -> BFrenchVerb {
         let brv = BFrenchVerb(verbPhrase : verbPhrase)
-        let verbModel = m_frenchVerbModelConjugation.getVerbModel(language: .French, verbWord: brv.m_verbWord)
-        brv.setPatterns(verbModel : verbModel)
+        romanceVerbModel = m_frenchVerbModelConjugation.getVerbModel(language: .French, verbWord: brv.m_verbWord)
+        brv.setPatterns(verbModel : romanceVerbModel)
         modelName = brv.getBescherelleInfo()
         return brv
     }
