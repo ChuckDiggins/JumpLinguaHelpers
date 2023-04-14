@@ -820,6 +820,7 @@ var myMasterVerbList: [JsonVerb] = [
     JsonVerb(spanish: "sobrevenir", english: "happen", french: "résulter"),
     JsonVerb(spanish: "sofocar", english: "suffocate", french: "étouffer"),
     JsonVerb(spanish: "sofreír", english: "saute",    french: "sauter"),
+    JsonVerb(spanish: "soler", english: "usually do", french: "faire habituellement"),
     JsonVerb(spanish: "sollozar", english: "whimper", french: "sangloter"),
     JsonVerb(spanish: "soltar", english: "release",    french: "libérer"),
     JsonVerb(spanish: "someter", english: "subdue", french: "envoyer"),
