@@ -1013,6 +1013,36 @@ public struct IrregularVerbsSpanish {
             morph.part1 = morph.verbForm
             morph.comment = getMorphComment(.replaceWith, verbForm)
             morphStruct.append(morphStep: morph)
+        case .conditional :
+            morph.isFinalStep = true
+            morph.verbForm = verbForm
+            morph.verbForm += "ir"
+            switch person{
+            case .S1:  ending = "ía"
+            case .S2:  ending = "ías"
+            case .S3:  ending = "ía"
+            case .P1:  ending = "íamos"
+            case .P2:  ending = "íais"
+            case .P3:  ending = "ían"
+            }
+            morph.verbForm = morph.verbForm + ending
+            morph.comment = getMorphComment(.appendEnding, ending)
+            morphStruct.append(morphStep: morph)
+        case .future :
+            morph.isFinalStep = true
+            morph.verbForm = verbForm
+            morph.verbForm += "ir"
+            switch person{
+            case .S1:  ending = "é"
+            case .S2:  ending = "ás"
+            case .S3:  ending = "á"
+            case .P1:  ending = "emos"
+            case .P2:  ending = "éis"
+            case .P3:  ending = "án"
+            }
+            morph.verbForm = morph.verbForm + ending
+            morph.comment = getMorphComment(.appendEnding, ending)
+            morphStruct.append(morphStep: morph)
         case .presentSubjunctive:
             morph.verbForm = verbForm + "vay_"
             morph.part1 = verbForm + "vay_"
@@ -1577,7 +1607,7 @@ public struct IrregularVerbsSpanish {
         case .imperfect:
             morph.isFinalStep = true
             morph.verbForm = verbForm
-            morph.verbForm += "ve"
+            morph.verbForm += "ver"
             switch person{
             case .S1:  ending = "ía"
             case .S2:  ending = "ías"
@@ -1588,6 +1618,37 @@ public struct IrregularVerbsSpanish {
             }
             morph.verbForm = morph.verbForm + ending
             morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+            morphStruct.append(morphStep: morph)
+            
+        case .conditional :
+            morph.isFinalStep = true
+            morph.verbForm = verbForm
+            morph.verbForm += "ver"
+            switch person{
+            case .S1:  ending = "ía"
+            case .S2:  ending = "ías"
+            case .S3:  ending = "ía"
+            case .P1:  ending = "íamos"
+            case .P2:  ending = "íais"
+            case .P3:  ending = "ían"
+            }
+            morph.verbForm = morph.verbForm + ending
+            morph.comment = getMorphComment(.appendEnding, ending)
+            morphStruct.append(morphStep: morph)
+        case .future :
+            morph.isFinalStep = true
+            morph.verbForm = verbForm
+            morph.verbForm += "ver"
+            switch person{
+            case .S1:  ending = "é"
+            case .S2:  ending = "ás"
+            case .S3:  ending = "á"
+            case .P1:  ending = "emos"
+            case .P2:  ending = "éis"
+            case .P3:  ending = "án"
+            }
+            morph.verbForm = morph.verbForm + ending
+            morph.comment = getMorphComment(.appendEnding, ending)
             morphStruct.append(morphStep: morph)
         case .presentParticiple:
             morph.isFinalStep = true
