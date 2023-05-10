@@ -163,6 +163,7 @@ public class BSpanishVerb : BRomanceVerb {
                 let result = vu.replaceSubrangeAndGetBeforeAndAfterStrings(inputString: m_verbStem, fromString: fromStr, toString: "_")
                 let partBefore = result.1
                 let partAfter = result.2
+                let other = result.0
                 word = partBefore + toStr + partAfter
                 if m_verbEnding == .AR { return word + "ando"}
                 let lastLetter = word.suffix(1)
