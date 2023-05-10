@@ -160,7 +160,7 @@ public class BSpanishVerb : BRomanceVerb {
                     return verbWord
                 }
 
-                var result = vu.replaceSubrangeAndGetBeforeAndAfterStrings(inputString: m_verbStem, fromString: fromStr, toString: "_")
+                let result = vu.replaceSubrangeAndGetBeforeAndAfterStrings(inputString: m_verbStem, fromString: fromStr, toString: "_")
                 let partBefore = result.1
                 let partAfter = result.2
                 word = partBefore + toStr + partAfter

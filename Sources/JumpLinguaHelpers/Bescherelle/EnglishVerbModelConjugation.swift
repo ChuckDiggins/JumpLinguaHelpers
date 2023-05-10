@@ -53,7 +53,7 @@ public class EnglishVerbModelConjugation : VerbModelConjugation{
     public func listVerbModels(){
         var vmIndex = 0
         print("Start of model dump\n\n")
-        for vm in verbModels {
+        for _ in verbModels {
             if ( vmIndex < 1000 ){
 //                dumpModel(index: vmIndex, vm: vm)
             }

@@ -1344,7 +1344,7 @@ public struct IrregularVerbsSpanish {
         let ms = inputMorphStruct.getMorphStep(index: 0)  //should be the infinitive
         let infinitive = ms.verbForm
         let prefix = infinitive.dropLast(4)
-        let stem = infinitive.dropLast(2)
+//        let stem = infinitive.dropLast(2)
         let shortStem = infinitive.dropLast(3)
         
         var morph = MorphStep()
@@ -1619,7 +1619,6 @@ public struct IrregularVerbsSpanish {
             morph.verbForm = morph.verbForm + ending
             morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
             morphStruct.append(morphStep: morph)
-            
         case .conditional :
             morph.isFinalStep = true
             morph.verbForm = verbForm
@@ -1632,6 +1631,7 @@ public struct IrregularVerbsSpanish {
             case .P2:  ending = "íais"
             case .P3:  ending = "ían"
             }
+            morph.isFinalStep = true
             morph.verbForm = morph.verbForm + ending
             morph.comment = getMorphComment(.appendEnding, ending)
             morphStruct.append(morphStep: morph)
