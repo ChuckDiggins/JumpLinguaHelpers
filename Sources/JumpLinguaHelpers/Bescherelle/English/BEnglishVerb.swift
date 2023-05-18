@@ -220,16 +220,6 @@ public class BEnglishVerb : BVerb {
     }
     
     public func getConjugateForm(tense : Tense, person : Person)->String {
-        var workingTense = tense
-        if tense >= .presentSubjunctive && tense < .imperative {
-            switch tense {
-            case .presentSubjunctive: workingTense = .present
-            case .imperfectSubjunctiveRA, .imperfectSubjunctiveSE: workingTense = .preterite
-            case .presentPerfectSubjunctive: workingTense = .presentPerfect
-            case .pastPerfectSubjunctiveRA, .pastPerfectSubjunctiveSE: workingTense = .pastPerfect
-            default: workingTense = tense
-            }
-        }
         switch verbModel.id{
         case 0:
             return getRegularForm(tense: tense, person: person)
@@ -252,6 +242,12 @@ public class BEnglishVerb : BVerb {
             case .P2: return "are"
             case .P3: return "are"
             }
+        case .presentSubjunctive:
+            return "be "
+        case .imperfectSubjunctiveRA, .imperfectSubjunctiveSE:
+            return "were "
+        case .pastPerfectSubjunctiveRA, .pastPerfectSubjunctiveSE:
+            return " were having "
         case .preterite:
             switch person{
             case .S1: return "was"
@@ -275,23 +271,39 @@ public class BEnglishVerb : BVerb {
         case .conditional:
             return "would " + m_verbWord
         case .presentPerfect:
-            if person == .S3 { return "has " + m_pastParticiple }
-            else { return "have " + m_pastParticiple}
+            if person == .S3 { return "has been " + m_pastParticiple }
+            else { return "have been " + m_pastParticiple}
         case .pastPerfect:
-            switch person{
-            case .S1: return "was having " + m_gerund
-            case .S2: return "were having " + m_gerund
-            case .S3: return "was having " + m_gerund
-            case .P1: return "were having " + m_gerund
-            case .P2: return "were having " + m_gerund
-            case .P3: return "were having " + m_gerund
-            }
+            return "was having been " + m_pastParticiple
         case .preteritePerfect:
-            return "had " + m_pastParticiple
+            return "had been " + m_pastParticiple
         case .futurePerfect:
-            return "will have " + m_pastParticiple
+            return "will have been " + m_pastParticiple
         case .conditionalPerfect:
-            return "would have " + m_pastParticiple
+            return "would have been " + m_pastParticiple
+        case .presentProgressive:
+            switch person{
+            case .S1: return "am being " + m_gerund
+            case .S2: return "are being " + m_gerund
+            case .S3: return "is being " + m_gerund
+            case .P1: return "are being " + m_gerund
+            case .P2: return "are being " + m_gerund
+            case .P3: return "are being " + m_gerund
+            }
+        case .imperfectProgressive:
+            switch person{
+            case .S1: return "was being " + m_gerund
+            case .S2: return "were being " + m_gerund
+            case .S3: return "was being " + m_gerund
+            case .P1: return "were being " + m_gerund
+            case .P2: return "were being " + m_gerund
+            case .P3: return "were being " + m_gerund
+            }
+        case .futureProgressive:
+            return "will be " + m_gerund
+        case .conditionalProgressive:
+            return "would be " + m_gerund
+           
         default: break
         }
         return "this tense not implemented yet"
