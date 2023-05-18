@@ -466,8 +466,13 @@ public enum  Person:  Int, CaseIterable
 
 }
 
-public enum  Tense : String, CustomStringConvertible, CaseIterable
+public enum  Tense : String, CustomStringConvertible, CaseIterable, Comparable
 {
+    public static func < (lhs: Tense, rhs: Tense) -> Bool {
+        if lhs == rhs { return true}
+        return false
+    }
+    
     case present = "Present"
     case preterite = "Preterite"
     case imperfect = "Imperfect"

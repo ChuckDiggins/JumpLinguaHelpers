@@ -220,6 +220,16 @@ public class BEnglishVerb : BVerb {
     }
     
     public func getConjugateForm(tense : Tense, person : Person)->String {
+        var workingTense = tense
+        if tense >= .presentSubjunctive && tense < .imperative {
+            switch tense {
+            case .presentSubjunctive: workingTense = .present
+            case .imperfectSubjunctiveRA, .imperfectSubjunctiveSE: workingTense = .preterite
+            case .presentPerfectSubjunctive: workingTense = .presentPerfect
+            case .pastPerfectSubjunctiveRA, .pastPerfectSubjunctiveSE: workingTense = .pastPerfect
+            default: workingTense = tense
+            }
+        }
         switch verbModel.id{
         case 0:
             return getRegularForm(tense: tense, person: person)
@@ -294,11 +304,16 @@ public class BEnglishVerb : BVerb {
                 return m_presentS3Form
             }
             else {return m_verbWord}
+        case .presentSubjunctive:
+            return m_verbWord
+        
         case .preterite:
             return m_preteriteForm
         case .imperfect:
             if person == .S1 || person == .S3 { return "was " + m_gerund }
             else { return "were " + m_gerund}
+        case .imperfectSubjunctiveRA, .imperfectSubjunctiveSE:
+            return m_preteriteForm
         case .future:
             return "will " + m_verbWord
         case .conditional:
@@ -309,12 +324,19 @@ public class BEnglishVerb : BVerb {
         case .pastPerfect:
             if person == .S1 || person == .S3 { return "was having " + m_pastParticiple }
             else { return "were having " + m_pastParticiple}
+        case .pastPerfectSubjunctiveRA, .pastPerfectSubjunctiveSE:
+            return "have " + m_pastParticiple
         case .preteritePerfect:
             return "had " + m_pastParticiple
         case .futurePerfect:
             return "will have " + m_pastParticiple
         case .conditionalPerfect:
             return "would have " + m_pastParticiple
+        case .presentProgressive:
+            if person == .S1 { return "am " + m_gerund }
+            if person == .S2 { return "are " + m_gerund }
+            if person == .S3 { return "is " + m_gerund }
+            return "are " + m_gerund
         default: break
         }
         return "this tense not implemented yet"
