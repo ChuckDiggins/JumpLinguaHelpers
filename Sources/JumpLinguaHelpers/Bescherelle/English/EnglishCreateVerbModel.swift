@@ -121,6 +121,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "pay", presS3: "pays", preterite: "paid", pastPart: "paid", gerund : "paying")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "put", presS3: "puts", preterite: "put", pastPart: "put", gerund : "putting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "read", presS3: "reads", preterite: "read", pastPart: "read", gerund : "reading")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "refer", presS3: "refers", preterite: "referred", pastPart: "referred", gerund : "referring")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "ride", presS3: "rides", preterite: "rode", pastPart: "ridden", gerund : "riding")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "run", presS3: "runs", preterite: "ran", pastPart: "run", gerund : "running")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "say", presS3: "says", preterite: "said", pastPart: "said", gerund : "saying")); id += 1
@@ -150,6 +151,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "wake", presS3: "wakes", preterite: "woke", pastPart: "wakened", gerund : "waking")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "wear", presS3: "wears", preterite: "wore", pastPart: "worn", gerund : "wearing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "win", presS3: "wins", preterite: "won", pastPart: "won", gerund : "winning")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "withdraw", presS3: "withdraws", preterite: "withdrawn", pastPart: "withdrawn", gerund : "withdrawing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "write", presS3: "writes", preterite: "wrote", pastPart: "wrote", gerund : "writing")); id += 1
     
     print("English verb model count = \(verbModelList.count)")
