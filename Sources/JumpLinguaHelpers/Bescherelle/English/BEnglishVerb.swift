@@ -210,12 +210,18 @@ public class BEnglishVerb : BVerb {
             m_gerund = verbModel.gerund
             m_verbWord = verbModel.infinitive
             prepareStemNew()
-            if endsInConsonantY {m_presentS3Form = m_presentS3Stem + "ies"}
-            else if endsInE {
-                m_presentS3Form = m_presentS3Stem + "es"
-                if m_verbWord == "have" {m_presentS3Form="has"}
+            
+            //this should never happen for a valid model
+            
+            if m_presentS3Form.count == 0  {
+                if endsInConsonantY {m_presentS3Form = m_presentS3Stem + "ies"}
+                else if endsInE {
+                    m_presentS3Form = m_presentS3Stem + "es"
+                    if m_verbWord == "have" {m_presentS3Form="has"}
+                }
+                else {
+                    m_presentS3Form = m_presentS3Stem + "s" }
             }
-            else { m_presentS3Form = m_presentS3Stem + "s" }
         }
     }
     

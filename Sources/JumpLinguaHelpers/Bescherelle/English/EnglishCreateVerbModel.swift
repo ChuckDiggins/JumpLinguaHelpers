@@ -73,7 +73,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "burn", presS3: "burns", preterite: "burned", pastPart: "burned", gerund : "burning")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "burst", presS3: "bursts", preterite: "burst", pastPart: "burst", gerund : "bursting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "buy", presS3: "buys", preterite: "bought", pastPart: "bought", gerund : "buying")); id += 1
-    verbModelList.append( EnglishVerbModel(id: id, infinitive: "can", presS3: "can", preterite: "could", pastPart: "no PP", gerund : "...")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "can", presS3: "can", preterite: "could", pastPart: "...", gerund : "...")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "cast", presS3: "casts", preterite: "cast", pastPart: "cast", gerund : "casting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "catch", presS3: "catches", preterite: "caught", pastPart: "caught", gerund : "catching")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "chide", presS3: "chides", preterite: "chided", pastPart: "chided", gerund : "chiding")); id += 1
@@ -106,6 +106,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "hear", presS3: "hears", preterite: "heard", pastPart: "heard", gerund : "hearing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "hide", presS3: "hides", preterite: "hid", pastPart: "hidden", gerund : "hiding")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "hold", presS3: "holds", preterite: "held", pastPart: "held", gerund : "holding")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "hug", presS3: "hugs", preterite: "hugged", pastPart: "hugged", gerund : "hugging")); id += 1
     
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "hurt", presS3: "hurts", preterite: "hurt", pastPart: "hurt", gerund : "hurting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "keep", presS3: "keeps", preterite: "kept", pastPart: "kept", gerund : "keeping")); id += 1
