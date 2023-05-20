@@ -332,6 +332,7 @@ public class BRomanceVerb: BVerb {
             morphStep.part1 = m_verbWord
             morphStep.part2 = "se"
             morphStep.comment = "Grab the reflexive pronoun -> se"
+            morphStep.isVerbReflexive = true
             morphStruct.append(morphStep : morphStep)
 
             let startsWithVowelSound = VerbUtilities().startsWithVowelSound(characterArray: m_verbWord)
@@ -341,6 +342,7 @@ public class BRomanceVerb: BVerb {
             morphStep.part3 = m_verbWord
             morphStep.verbForm = morphStep.part1 + morphStep.part2 + morphStep.part3
             morphStep.comment = "Convert to \(morphStep.part2) and move in front of the verb"
+            morphStep.isVerbReflexive = true
             morphStruct.append(morphStep : morphStep)
             morphStructManager.setBoth(person: person, ms: morphStruct)
         }
