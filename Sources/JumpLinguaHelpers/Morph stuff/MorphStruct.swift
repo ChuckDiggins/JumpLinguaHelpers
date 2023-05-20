@@ -34,6 +34,7 @@ public struct MorphStruct  {
     public func count()->Int { return morphStepArray.count}
     public mutating func append( morphStep : MorphStep ){
         morphStepArray.append(morphStep)
+        if morphStep.isVerbReflexive { isVerbReflexive = true }
         isValid = true
     }
     
@@ -47,7 +48,7 @@ public struct MorphStruct  {
                 return true
             }
         }
-        return false
+        return isVerbReflexive
     }
     
     public func getLastMorphStep()->MorphStep{

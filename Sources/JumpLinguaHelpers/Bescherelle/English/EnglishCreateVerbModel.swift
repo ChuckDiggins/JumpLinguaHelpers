@@ -48,11 +48,12 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     //this first because it's standalone
     
     // id = 0 is reserved for regular verbs
-    verbModelList.append( EnglishVerbModel(id: 0, infinitive: "abandon", presS3: "abandons", preterite: "abandoned", pastPart: "adbandoned", gerund : "abandoning"))
-    verbModelList.append( EnglishVerbModel(id: 0, infinitive: "admit", presS3: "admits", preterite: "admitted", pastPart: "admitted", gerund : "admitting"))
-    verbModelList.append( EnglishVerbModel(id: 0, infinitive: "beg", presS3: "begs", preterite: "begged", pastPart: "begged", gerund : "begging"))
-    verbModelList.append( EnglishVerbModel(id: 0, infinitive: "pop", presS3: "pops", preterite: "popped", pastPart: "popped", gerund : "popping"))
     var id = 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "abandon", presS3: "abandons", preterite: "abandoned", pastPart: "abandoned", gerund : "abandoning")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "accustom", presS3: "accustoms", preterite: "accustomed", pastPart: "accustomed", gerund : "accustoming")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "admit", presS3: "admits", preterite: "admitted", pastPart: "admitted", gerund : "admitting")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "beg", presS3: "begs", preterite: "begged", pastPart: "begged", gerund : "begging")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "pop", presS3: "pops", preterite: "popped", pastPart: "popped", gerund : "popping")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "be", presS3: "is", preterite: "was", pastPart: "been", gerund : "being")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "arise", presS3: "arises", preterite: "arose", pastPart: "arisen", gerund : "arising")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "awake", presS3: "awakens", preterite: "awoke", pastPart: "awoken", gerund : "awaking")); id += 1
@@ -76,6 +77,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "can", presS3: "can", preterite: "could", pastPart: "...", gerund : "...")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "cast", presS3: "casts", preterite: "cast", pastPart: "cast", gerund : "casting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "catch", presS3: "catches", preterite: "caught", pastPart: "caught", gerund : "catching")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "cheer", presS3: "cheers", preterite: "cheered", pastPart: "cheered", gerund : "cheering")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "chide", presS3: "chides", preterite: "chided", pastPart: "chided", gerund : "chiding")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "choose", presS3: "chooses", preterite: "chose", pastPart: "chosen", gerund : "choosing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "come", presS3: "comes", preterite: "came", pastPart: "come", gerund : "coming")); id += 1
@@ -83,6 +85,8 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "cut", presS3: "cuts", preterite: "cut", pastPart: "cut", gerund : "cutting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "develop", presS3: "develops", preterite: "developed", pastPart: "developed", gerund : "developing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "do", presS3: "does", preterite: "did", pastPart: "done", gerund : "doing")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "dirty", presS3: "dirties", preterite: "dirtied", pastPart: "dirtied", gerund : "dirtying")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "dive", presS3: "dives", preterite: "dove", pastPart: "dived", gerund : "diving")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "draw", presS3: "draws", preterite: "drew", pastPart: "drawn", gerund : "drawing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "dream", presS3: "dreams", preterite: "dreamt", pastPart: "dreamt", gerund : "dreaming")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "drink", presS3: "drinks", preterite: "drank", pastPart: "drunk", gerund : "drinking")); id += 1
@@ -111,6 +115,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "hurt", presS3: "hurts", preterite: "hurt", pastPart: "hurt", gerund : "hurting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "keep", presS3: "keeps", preterite: "kept", pastPart: "kept", gerund : "keeping")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "know", presS3: "knows", preterite: "knew", pastPart: "known", gerund : "knowing")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "laugh", presS3: "laughs", preterite: "laughed", pastPart: "laughed", gerund : "laughing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "learn", presS3: "learns", preterite: "learned", pastPart: "learned", gerund : "learning")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "leave", presS3: "leaves", preterite: "left", pastPart: "left", gerund : "leaving")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "lie", presS3: "lies", preterite: "lay", pastPart: "lain", gerund : "lying")); id += 1
@@ -142,6 +147,7 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "straighten", presS3: "straightens", preterite: "straightened", pastPart: "straightened", gerund : "straightening")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "swim", presS3: "swims", preterite: "swam", pastPart: "swum", gerund : "swimming")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "take", presS3: "takes", preterite: "took", pastPart: "taken", gerund : "taking")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "tan", presS3: "tans", preterite: "tanned", pastPart: "tanned", gerund : "tanning")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "teach", presS3: "teaches", preterite: "taught", pastPart: "taught", gerund : "teaching")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "tell", presS3: "tells", preterite: "told", pastPart: "told", gerund : "telling")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "think", presS3: "thinks", preterite: "thought", pastPart: "thought", gerund : "thinking")); id += 1
@@ -149,9 +155,11 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "understand", presS3: "understands", preterite: "understood", pastPart: "understood", gerund : "understanding")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "wake", presS3: "wakes", preterite: "woke", pastPart: "wakened", gerund : "waking")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "walk", presS3: "walks", preterite: "walked", pastPart: "walked", gerund : "walking")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "wear", presS3: "wears", preterite: "wore", pastPart: "worn", gerund : "wearing")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "wet", presS3: "wets", preterite: "wet", pastPart: "wet", gerund : "wetting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "win", presS3: "wins", preterite: "won", pastPart: "won", gerund : "winning")); id += 1
-    verbModelList.append( EnglishVerbModel(id: id, infinitive: "withdraw", presS3: "withdraws", preterite: "withdrawn", pastPart: "withdrawn", gerund : "withdrawing")); id += 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "withdraw", presS3: "withdraws", preterite: "withdrew", pastPart: "withdrawn", gerund : "withdrawing")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "write", presS3: "writes", preterite: "wrote", pastPart: "wrote", gerund : "writing")); id += 1
     
     print("English verb model count = \(verbModelList.count)")

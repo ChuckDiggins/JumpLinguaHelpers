@@ -277,38 +277,38 @@ public class BEnglishVerb : BVerb {
         case .conditional:
             return "would " + m_verbWord
         case .presentPerfect:
-            if person == .S3 { return "has been " }
-            else { return "have been " }
+            if person == .S3 { return "has been" }
+            else { return "have been" }
         case .pastPerfect:
-            return "was having been "
+            return "was having been"
         case .preteritePerfect:
-            return "had been "
+            return "had been"
         case .futurePerfect:
-            return "will have been "
+            return "will have been"
         case .conditionalPerfect:
-            return "would have been "
+            return "would have been"
         case .presentProgressive:
             switch person{
-            case .S1: return "am being "
-            case .S2: return "are being "
-            case .S3: return "is being "
-            case .P1: return "are being "
-            case .P2: return "are being "
-            case .P3: return "are being "
+            case .S1: return "am being"
+            case .S2: return "are being"
+            case .S3: return "is being"
+            case .P1: return "are being"
+            case .P2: return "are being"
+            case .P3: return "are being"
             }
         case .imperfectProgressive:
             switch person{
-            case .S1: return "was being "
-            case .S2: return "were being "
-            case .S3: return "was being "
-            case .P1: return "were being "
-            case .P2: return "were being "
-            case .P3: return "were being "
+            case .S1: return "was being"
+            case .S2: return "were being"
+            case .S3: return "was being"
+            case .P1: return "were being"
+            case .P2: return "were being"
+            case .P3: return "were being"
             }
         case .futureProgressive:
-            return "will be "
+            return "will be"
         case .conditionalProgressive:
-            return "would be "
+            return "would be"
            
         default: break
         }
