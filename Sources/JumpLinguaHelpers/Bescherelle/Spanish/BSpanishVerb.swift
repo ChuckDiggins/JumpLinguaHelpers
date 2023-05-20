@@ -156,7 +156,7 @@ public class BSpanishVerb : BRomanceVerb {
                     var verbWord = m_verbWord
                     verbWord = vu.removeLastLetters(verbWord: verbWord, letterCount: fromStr.count)
                     verbWord += toStr
-                    print("create gerund: for verb \(verbWord) from \(fromStr), to \(toStr)")
+//                    print("create gerund: for verb \(verbWord) from \(fromStr), to \(toStr)")
                     return verbWord
                 }
 

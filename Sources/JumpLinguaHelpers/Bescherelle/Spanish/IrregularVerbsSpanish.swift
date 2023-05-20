@@ -1072,7 +1072,7 @@ public struct IrregularVerbsSpanish {
             morph.part1 = verbForm + "fu___"
             morphStruct.append(morphStep: morph)
             morph = MorphStep()
-            morph.verbForm = "fu"
+            morph.verbForm = verbForm + "fu"
             morph.isFinalStep = true
             
             switch person{
@@ -1610,6 +1610,33 @@ public struct IrregularVerbsSpanish {
             case .P1:  verbForm += "veamos"
             case .P2:  verbForm += "veáis"
             case .P3:  verbForm += "vean"
+            }
+            morph.verbForm = verbForm
+            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+            morphStruct.append(morphStep: morph)
+            
+        case .imperfectSubjunctiveRA:
+            morph.isFinalStep = true
+            switch person{
+            case .S1:  verbForm += "viera"
+            case .S2:  verbForm += "vieras"
+            case .S3:  verbForm += "viera"
+            case .P1:  verbForm += "viéramos"
+            case .P2:  verbForm += "vierais"
+            case .P3:  verbForm += "vieran"
+            }
+            morph.verbForm = verbForm
+            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+            morphStruct.append(morphStep: morph)
+        case .imperfectSubjunctiveSE:
+            morph.isFinalStep = true
+            switch person{
+            case .S1:  verbForm += "viese"
+            case .S2:  verbForm += "vieses"
+            case .S3:  verbForm += "viese"
+            case .P1:  verbForm += "viésemos"
+            case .P2:  verbForm += "vieseis"
+            case .P3:  verbForm += "viesen"
             }
             morph.verbForm = verbForm
             morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
