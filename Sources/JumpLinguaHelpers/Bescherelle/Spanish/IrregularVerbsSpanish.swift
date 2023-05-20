@@ -1374,6 +1374,23 @@ public struct IrregularVerbsSpanish {
             morph.part2 = ending
             morph.verbForm = morph.part1 + morph.part2
             morph.comment = getMorphComment(.appendEnding, ending)
+        case .imperfect:
+            morph.comment = getMorphComment(.removeEnding, "ír")
+            morphStruct.append(morphStep: morph)
+            morph = MorphStep()
+            morph.verbForm = String(shortStem)
+            switch person{
+            case .S1: ending = "ía"
+            case .S2:  ending = "ías"
+            case .S3: ending = "ía"
+            case .P1:  ending = "íamos"
+            case .P2:  ending = "íais"
+            case .P3:  ending = "ían"
+            }
+            morph.part1 = morph.verbForm
+            morph.part2 = ending
+            morph.verbForm = morph.part1 + morph.part2
+            morph.comment = getMorphComment(.appendEnding, ending)
         case .preterite:
             morph.comment = getMorphComment(.removeEnding, "eír")
             morphStruct.append(morphStep: morph)
@@ -1454,7 +1471,7 @@ public struct IrregularVerbsSpanish {
             morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
             
         default:
-            break
+            return morphStruct
         }
         if isReflexive {
             var currentVerbForm = morph.verbForm

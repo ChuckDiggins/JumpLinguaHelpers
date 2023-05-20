@@ -49,14 +49,13 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     
     // id = 0 is reserved for regular verbs
     //id = 1 is reserved for "to be"
-    
-    var id = 2
+     var id = 1
+    verbModelList.append( EnglishVerbModel(id: id, infinitive: "be", presS3: "is", preterite: "was", pastPart: "been", gerund : "being")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "abandon", presS3: "abandons", preterite: "abandoned", pastPart: "abandoned", gerund : "abandoning")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "accustom", presS3: "accustoms", preterite: "accustomed", pastPart: "accustomed", gerund : "accustoming")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "admit", presS3: "admits", preterite: "admitted", pastPart: "admitted", gerund : "admitting")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "beg", presS3: "begs", preterite: "begged", pastPart: "begged", gerund : "begging")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "pop", presS3: "pops", preterite: "popped", pastPart: "popped", gerund : "popping")); id += 1
-    verbModelList.append( EnglishVerbModel(id: id, infinitive: "be", presS3: "is", preterite: "was", pastPart: "been", gerund : "being")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "arise", presS3: "arises", preterite: "arose", pastPart: "arisen", gerund : "arising")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "awake", presS3: "awakens", preterite: "awoke", pastPart: "awoken", gerund : "awaking")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "awake", presS3: "awakes", preterite: "awaked", pastPart: "awaked", gerund : "awaking")); id += 1

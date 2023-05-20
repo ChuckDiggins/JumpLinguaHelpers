@@ -229,7 +229,7 @@ public class BEnglishVerb : BVerb {
         switch verbModel.id{
         case 0:
             return getRegularForm(tense: tense, person: person)
-        case 1:
+        case 1, 7:
             return getBeForm(tense: tense, person: person)
         default:
             return getRegularForm(tense: tense, person: person)
