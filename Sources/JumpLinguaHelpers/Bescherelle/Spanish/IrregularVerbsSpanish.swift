@@ -1345,6 +1345,7 @@ public struct IrregularVerbsSpanish {
         let infinitive = ms.verbForm
         let prefix = infinitive.dropLast(4)
         let isReflexive = morphStruct.isVerbReflexive
+        let reflexivePronoun = ["me", "te", "se", "nos", "os", "se"]
         
 //        let stem = infinitive.dropLast(2)
         let shortStem = infinitive.dropLast(3)
@@ -1459,7 +1460,7 @@ public struct IrregularVerbsSpanish {
             var currentVerbForm = morph.verbForm
             morphStruct.append(morphStep: morph)
             morph = MorphStep()
-            var reflexivePronoun = morphStruct.getReflexivePronoun()
+            var reflexivePronoun = reflexivePronoun[person.getIndex()]
             morph.part1 = reflexivePronoun + " "
             morph.part2 = currentVerbForm
             morph.verbForm = morph.part1 + morph.part2
@@ -1473,77 +1474,77 @@ public struct IrregularVerbsSpanish {
         return morphStruct
     }
     
-    public func getFormSonreir (inputMorphStruct : MorphStruct, tense: Tense, person: Person ) -> MorphStruct {
-        var morphStruct = inputMorphStruct
-        var morph : MorphStep
-        let isReflexive = morphStruct.isVerbReflexive
-        morph = MorphStep()
-        morph.isIrregular = true
-        
-        switch (tense){
-        case .present:
-            switch person{
-            case .S1:  morph.verbForm = "sonrío"
-            case .S2:  morph.verbForm = "sonríes"
-            case .S3:  morph.verbForm = "sonríe"
-            case .P1:  morph.verbForm = "sonreímos"
-            case .P2:  morph.verbForm = "sonreís"
-            case .P3:  morph.verbForm = "sonríen"
-            }
-            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
-            morphStruct.append(morphStep: morph)
-        case .presentSubjunctive:
-            switch person{
-            case .S1:  morph.verbForm = "sonría"
-            case .S2:  morph.verbForm = "sonrías"
-            case .S3:  morph.verbForm = "sonría"
-            case .P1:  morph.verbForm = "sonriamos"
-            case .P2:  morph.verbForm = "sonriaís"
-            case .P3:  morph.verbForm = "sonrían"
-            }
-            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
-            morphStruct.append(morphStep: morph)
-            
-        case .preterite:
-            switch person{
-            case .S1:  morph.verbForm = "sonreí"
-            case .S2:  morph.verbForm = "sonreíste"
-            case .S3:  morph.verbForm = "sonrió"
-            case .P1:  morph.verbForm = "sonreímos"
-            case .P2:  morph.verbForm = "sonreísteis"
-            case .P3:  morph.verbForm = "sonrieron"
-            }
-            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
-        case .presentParticiple:
-            morph.verbForm = "sonriendo"
-            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
-            morphStruct.append(morphStep: morph)
-        case .pastParticiple:
-            morph.verbForm = "sonreído"
-            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
-            morphStruct.append(morphStep: morph)
-        default:
-            break
-        }
-        if isReflexive {
-            var currentVerbForm = morph.verbForm
-            morphStruct.append(morphStep: morph)
-            morph = MorphStep()
-            var reflexivePronoun = morphStruct.getReflexivePronoun()
-            morph.part1 = reflexivePronoun + " "
-            morph.part2 = currentVerbForm
-            morph.verbForm = morph.part1 + morph.part2
-            morph.comment = "append reflexive pronoun"
-            morph.isFinalStep = true
-            morphStruct.append(morphStep: morph)
-        } else {
-            morph.isFinalStep = true
-            morphStruct.append(morphStep: morph)
-        }
-        return morphStruct
-    }
-    
-    
+//    public func getFormSonreir (inputMorphStruct : MorphStruct, tense: Tense, person: Person ) -> MorphStruct {
+//        var morphStruct = inputMorphStruct
+//        var morph : MorphStep
+//        let isReflexive = morphStruct.isVerbReflexive
+//        morph = MorphStep()
+//        morph.isIrregular = true
+//
+//        switch (tense){
+//        case .present:
+//            switch person{
+//            case .S1:  morph.verbForm = "sonrío"
+//            case .S2:  morph.verbForm = "sonríes"
+//            case .S3:  morph.verbForm = "sonríe"
+//            case .P1:  morph.verbForm = "sonreímos"
+//            case .P2:  morph.verbForm = "sonreís"
+//            case .P3:  morph.verbForm = "sonríen"
+//            }
+//            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+//            morphStruct.append(morphStep: morph)
+//        case .presentSubjunctive:
+//            switch person{
+//            case .S1:  morph.verbForm = "sonría"
+//            case .S2:  morph.verbForm = "sonrías"
+//            case .S3:  morph.verbForm = "sonría"
+//            case .P1:  morph.verbForm = "sonriamos"
+//            case .P2:  morph.verbForm = "sonriaís"
+//            case .P3:  morph.verbForm = "sonrían"
+//            }
+//            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+//            morphStruct.append(morphStep: morph)
+//
+//        case .preterite:
+//            switch person{
+//            case .S1:  morph.verbForm = "sonreí"
+//            case .S2:  morph.verbForm = "sonreíste"
+//            case .S3:  morph.verbForm = "sonrió"
+//            case .P1:  morph.verbForm = "sonreímos"
+//            case .P2:  morph.verbForm = "sonreísteis"
+//            case .P3:  morph.verbForm = "sonrieron"
+//            }
+//            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+//        case .presentParticiple:
+//            morph.verbForm = "sonriendo"
+//            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+//            morphStruct.append(morphStep: morph)
+//        case .pastParticiple:
+//            morph.verbForm = "sonreído"
+//            morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
+//            morphStruct.append(morphStep: morph)
+//        default:
+//            break
+//        }
+//        if isReflexive {
+//            var currentVerbForm = morph.verbForm
+//            morphStruct.append(morphStep: morph)
+//            morph = MorphStep()
+//            var reflexivePronoun = morphStruct.getReflexivePronoun()
+//            morph.part1 = reflexivePronoun + " "
+//            morph.part2 = currentVerbForm
+//            morph.verbForm = morph.part1 + morph.part2
+//            morph.comment = "append reflexive pronoun"
+//            morph.isFinalStep = true
+//            morphStruct.append(morphStep: morph)
+//        } else {
+//            morph.isFinalStep = true
+//            morphStruct.append(morphStep: morph)
+//        }
+//        return morphStruct
+//    }
+//
+//
     
     public func getFormVer (inputMorphStruct : MorphStruct, tense: Tense, person: Person ) -> MorphStruct {
         let vu = VerbUtilities()

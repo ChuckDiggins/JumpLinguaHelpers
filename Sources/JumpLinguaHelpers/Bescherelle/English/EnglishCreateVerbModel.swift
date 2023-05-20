@@ -48,7 +48,9 @@ public func createEnglishVerbModels()->[EnglishVerbModel]{
     //this first because it's standalone
     
     // id = 0 is reserved for regular verbs
-    var id = 1
+    //id = 1 is reserved for "to be"
+    
+    var id = 2
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "abandon", presS3: "abandons", preterite: "abandoned", pastPart: "abandoned", gerund : "abandoning")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "accustom", presS3: "accustoms", preterite: "accustomed", pastPart: "accustomed", gerund : "accustoming")); id += 1
     verbModelList.append( EnglishVerbModel(id: id, infinitive: "admit", presS3: "admits", preterite: "admitted", pastPart: "admitted", gerund : "admitting")); id += 1
