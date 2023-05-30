@@ -451,15 +451,16 @@ public struct IrregularVerbsSpanish {
     morph = MorphStep()
     morph.isIrregular = true
     
-    var verbFormPrefix = inputMorphStruct.finalVerbForm()
+    var verbFormPrefix = ""
     var reflexivePronoun = ""
     //if this is a derivative word, such as deshacer, then create the prefix
     
     let result = vu.getListOfWords(characterArray: inputMorphStruct.finalVerbForm())
+    verbFormPrefix = result[0]
     if isReflexive && result.count > 2 {
         reflexivePronoun = result[0] + " "
         verbFormPrefix = result[1]
-    }
+    } 
     
     if verbFormPrefix.count > infinitive.count {
         verbFormPrefix = vu.removeLastLetters(verbWord: verbFormPrefix, letterCount: infinitive.count)  //remove the infinitive
