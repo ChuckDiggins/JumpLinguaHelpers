@@ -444,6 +444,7 @@ public struct IrregularVerbsSpanish {
     let infinitive = "hacer"
     var morphStruct = inputMorphStruct
     var morph : MorphStep
+    let isReflexive = inputMorphStruct.isVerbReflexive
     
     //this step was missing from morph struct (1/8/23)
     
@@ -451,15 +452,22 @@ public struct IrregularVerbsSpanish {
     morph.isIrregular = true
     
     var verbFormPrefix = inputMorphStruct.finalVerbForm()
+    var reflexivePronoun = ""
     //if this is a derivative word, such as deshacer, then create the prefix
+    
+    let result = vu.getListOfWords(characterArray: inputMorphStruct.finalVerbForm())
+    if isReflexive && result.count > 2 {
+        reflexivePronoun = result[0] + " "
+        verbFormPrefix = result[1]
+    }
     
     if verbFormPrefix.count > infinitive.count {
         verbFormPrefix = vu.removeLastLetters(verbWord: verbFormPrefix, letterCount: infinitive.count)  //remove the infinitive
-        morph.verbForm = verbFormPrefix
+        morph.verbForm = reflexivePronoun + verbFormPrefix
         morph.comment = getMorphComment(.removeInfinitive, infinitive)
         morphStruct.append(morphStep: morph)
     } else {
-        verbFormPrefix = ""
+        verbFormPrefix = reflexivePronoun + ""
     }
     
     var ending : String
