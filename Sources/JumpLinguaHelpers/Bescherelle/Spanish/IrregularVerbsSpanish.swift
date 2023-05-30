@@ -457,10 +457,10 @@ public struct IrregularVerbsSpanish {
     
     let result = vu.getListOfWords(characterArray: inputMorphStruct.finalVerbForm())
     verbFormPrefix = result[0]
-    if isReflexive && result.count > 2 {
+    if isReflexive && result.count > 1 {
         reflexivePronoun = result[0] + " "
         verbFormPrefix = result[1]
-    } 
+    }
     
     if verbFormPrefix.count > infinitive.count {
         verbFormPrefix = vu.removeLastLetters(verbWord: verbFormPrefix, letterCount: infinitive.count)  //remove the infinitive
