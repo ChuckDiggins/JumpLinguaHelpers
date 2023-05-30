@@ -443,8 +443,6 @@ public struct IrregularVerbsSpanish {
     let vu = VerbUtilities()
     let infinitive = "hacer"
     var morphStruct = inputMorphStruct
-    let isReflexive = morphStruct.isVerbReflexive
-    let reflexivePronoun = ["me", "te", "se", "nos", "os", "se"]
     var morph : MorphStep
     
     //this step was missing from morph struct (1/8/23)
@@ -565,22 +563,8 @@ public struct IrregularVerbsSpanish {
         morph.verbForm = morph.verbForm + ending
         morph.comment = getMorphComment(.appendEnding, ending)
         morphStruct.append(morphStep: morph)
-    default: break
-    }
-    if isReflexive {
-        let currentVerbForm = morph.verbForm
-        morphStruct.append(morphStep: morph)
-        morph = MorphStep()
-        var reflexivePronoun = reflexivePronoun[person.getIndex()]
-        morph.part1 = reflexivePronoun + " "
-        morph.part2 = currentVerbForm
-        morph.verbForm = morph.part1 + morph.part2
-        morph.comment = "append reflexive pronoun"
-        morph.isFinalStep = true
-        morphStruct.append(morphStep: morph)
-    } else {
-        morph.isFinalStep = true
-        morphStruct.append(morphStep: morph)
+    default:
+        return morphStruct
     }
     return morphStruct
     
@@ -1486,7 +1470,8 @@ public struct IrregularVerbsSpanish {
             morph.verbForm = "\(prefix)reído"
             morph.comment = getMorphComment(.replaceWithIrregular, morph.verbForm )
             
-        default: break
+        default:
+            return morphStruct
         }
         if isReflexive {
             var currentVerbForm = morph.verbForm
