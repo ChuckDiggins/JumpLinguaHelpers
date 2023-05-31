@@ -540,7 +540,7 @@ public struct IrregularVerbsSpanish {
         morphStruct.append(morphStep: morph)
         
         morph = MorphStep()
-        morph.verbForm = "har"
+        morph.verbForm = verbFormPrefix + "har"
         morph.isFinalStep = true
         switch person{
         case .S1:  ending = "é"
