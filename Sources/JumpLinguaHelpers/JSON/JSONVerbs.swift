@@ -358,11 +358,10 @@ var myMasterVerbList: [JsonVerb] = [
     JsonVerb(spanish: "comer", english: "eat", french: "manger"),
     JsonVerb(spanish: "cometer", english: "commit", french: "se engager"),
     JsonVerb(spanish: "comparecer", english: "compare", french: "comparer"),
-    
     JsonVerb(spanish: "compartir", english: "share", french: "partager"),
-    JsonVerb(spanish: "componer", english: "compose", french: "composer"),
-    
     JsonVerb(spanish: "competir", english: "compete",    french: "concourir"),
+    
+    JsonVerb(spanish: "componer", english: "compose", french: "composer"),
     JsonVerb(spanish: "comprar", english: "buy",    french: "acheter"),
     JsonVerb(spanish: "comprender", english: "understand",    french: "comprender"),
     JsonVerb(spanish: "computarizar", english: "computerize",    french: "informatiser"),
