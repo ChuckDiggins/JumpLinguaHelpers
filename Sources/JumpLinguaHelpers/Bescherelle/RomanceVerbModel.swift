@@ -30,7 +30,7 @@ public enum NewVerbModelType : String, CaseIterable {
     case SpellChanging
     case Irregular   //spanish:  tener, gustar, jugar, decir, creer, conocer
     case LikeGustar  //gustar, paracer, etc.  ==
-    case undefined //
+    case All //
     
     
     public func getTypeName()->String{
@@ -41,7 +41,7 @@ public enum NewVerbModelType : String, CaseIterable {
         case .SpellChanging: return "Spell changing"
         case .Irregular: return "Irregular"
         case .LikeGustar: return "Like gustar"
-        case .undefined: return "Undefined"
+        case .All: return "All"
         }
     }
     
@@ -53,7 +53,7 @@ public enum NewVerbModelType : String, CaseIterable {
         case .SpellChanging: return "Spell"
         case .Irregular: return "Irreg"
         case .LikeGustar: return "~Gustar"
-        case .undefined: return "Und"
+        case .All: return "All"
         }
     }
     

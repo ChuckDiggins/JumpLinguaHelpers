@@ -415,7 +415,9 @@ public enum  Person:  Int, CaseIterable
                 switch self {
                 case .S1: return "I"
                 case .S2: return "you"
-                case .S3: return "he"
+                case .S3:
+                    if (useUstedForm){ return "you"}
+                    else { return "he" }
                 case .P1: return "we"
                 case .P2: return "you"
                 case .P3: return "they"
